@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-
-export default function Statistics({ good, neutral, bad, total, positiveFeedback = 0 }) {
+import { PropTypes } from 'prop-types';
+//----------------------------------------------------------//
+const Statistics = ({ good, neutral, bad, total, positivePercentage = 0 }) => {
   return (
-    <ul className="">
+    <ul className="stat-list">
       <li key="1">
         <p>Good: {good}</p>
       </li>
@@ -16,16 +16,17 @@ export default function Statistics({ good, neutral, bad, total, positiveFeedback
         <p>Total: {total}</p>
       </li>
       <li key="5">
-        <p>Positive feedback: {positiveFeedback}%</p>
+        <p>Positive feedback: {positivePercentage}%</p>
       </li>
     </ul>
   );
-}
+};
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  positiveFeedback: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
+export { Statistics };

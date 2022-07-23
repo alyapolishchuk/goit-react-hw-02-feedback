@@ -1,8 +1,9 @@
-import { Component } from "react";
-import Feedbacks from "./Feedbacks/Feedbacks";
-import Statistics from "./Statistics/Statistacs";
-import Section from "./Section/Section";
-import Notification from "./Notification/Notification";
+import { Component } from 'react';
+import { Section } from './Section/Section';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Statistics } from './Statistics/Statistics';
+import { Notification } from './Notification/Notification';
+//--------------------------------------------------------------------//
 
 class App extends Component {
   state = {
@@ -32,10 +33,10 @@ class App extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <Feedbacks
+          <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.handlerBtn}
-          ></Feedbacks>
+          ></FeedbackOptions>
         </Section>
         <Section title="Statistics">
           {!this.countTotalFeedback() ? (
