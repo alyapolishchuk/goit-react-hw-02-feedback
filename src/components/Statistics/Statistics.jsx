@@ -1,22 +1,25 @@
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 //----------------------------------------------------------//
-const Statistics = ({ good, neutral, bad, total, positivePercentage = 0 }) => {
+export default function Statistics({ good, neutral, bad, total, positivePercentage = 0 }) {
   return (
-    <ul className="stat-list">
-      <li key="1">
-        <p>Good: {good}</p>
+    <ul className={css.list}>
+      <li key="1" className={css.item}>
+        <p className={css.good}>Good: {good}</p>
       </li>
-      <li key="2">
-        <p>Neutral: {neutral}</p>
+      <li key="2" className={css.item}>
+        <p className={css.neutral}>Neutral: {neutral}</p>
       </li>
-      <li key="3">
-        <p>Bad: {bad}</p>
+      <li key="3" className={css.item}>
+        <p className={css.bad}>Bad: {bad}</p>
       </li>
-      <li key="4">
-        <p>Total: {total}</p>
+      <li key="4" className={css.item}>
+        <p className={css.total}>Total: {total}</p>
       </li>
       <li key="5">
-        <p>Positive feedback: {positivePercentage}%</p>
+        <p className={css.persentage}>
+          Positive feedback: {positivePercentage}%
+        </p>
       </li>
     </ul>
   );
@@ -29,4 +32,4 @@ Statistics.propTypes = {
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
-export { Statistics };
+
